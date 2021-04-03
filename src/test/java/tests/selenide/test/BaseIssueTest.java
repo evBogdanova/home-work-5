@@ -4,9 +4,9 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import tests.TestData;
-import tests.selenide.page.PageIssue;
+import tests.selenide.page.IssueTestPage;
 
-public class TestBaseIssue {
+public class BaseIssueTest {
     @BeforeAll
     static void fullScreen() {
         Configuration.startMaximized = true;
@@ -15,10 +15,10 @@ public class TestBaseIssue {
     @Test
     void pageIssue() {
         TestData testData = new TestData();
-        PageIssue.openPageGitHub(testData);
-        PageIssue.searchRepository(testData);
-        PageIssue.openRepository(testData);
-        PageIssue.checkIssue(testData);
+        IssueTestPage.openPageGitHub(testData);
+        IssueTestPage.searchRepository(testData);
+        IssueTestPage.openRepository(testData);
+        IssueTestPage.checkIssue(testData);
 
     }
 }

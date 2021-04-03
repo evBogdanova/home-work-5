@@ -4,8 +4,9 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import tests.TestData;
+import tests.annotations.page.WebSteps;
 
-public class TestBaseAnnotations {
+public class BaseAnnotationsTest {
     private WebSteps webSteps = new WebSteps();
     TestData value = new TestData();
 

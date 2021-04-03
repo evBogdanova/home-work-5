@@ -1,14 +1,14 @@
-package tests.lambda.page;
+package tests.selenide.page;
 
 import org.openqa.selenium.By;
 import tests.TestData;
-import tests.lambda.test.TestBaseLambda;
+import tests.selenide.test.BaseIssueTest;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class PageIssueLambda extends TestBaseLambda {
+public class IssueTestPage extends BaseIssueTest {
 
     public static void openPageGitHub(TestData value) {
         open(value.getUrl());

@@ -4,11 +4,11 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import tests.TestData;
-import tests.lambda.page.PageIssueLambda;
+import tests.lambda.page.IssueLambdaTestPage;
 
 import static io.qameta.allure.Allure.step;
 
-public class TestBaseLambda {
+public class BaseLambdaTest {
     @BeforeAll
     static void fullScreen() {
         Configuration.startMaximized = true;
@@ -18,16 +18,16 @@ public class TestBaseLambda {
     void pageIssue() {
         TestData value = new TestData();
         step ("Переходим к GitHub", () -> {
-            PageIssueLambda.openPageGitHub(value);
+            IssueLambdaTestPage.openPageGitHub(value);
         }) ;
         step ("Ищем репозиторий", () -> {
-            PageIssueLambda.searchRepository(value);
+            IssueLambdaTestPage.searchRepository(value);
         }) ;
         step ("Переходим к репозиторию", () -> {
-            PageIssueLambda.openRepository(value);
+            IssueLambdaTestPage.openRepository(value);
         }) ;
         step ("Проверяем наличие Issue", () -> {
-            PageIssueLambda.checkIssue(value);
+            IssueLambdaTestPage.checkIssue(value);
         }) ;
 
     }

@@ -1,32 +1,29 @@
-package tests.annotations.test;
+package tests.lambda.page;
 
-import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import tests.TestData;
+import tests.lambda.test.BaseLambdaTest;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class WebSteps {
+public class IssueLambdaTestPage extends BaseLambdaTest {
 
-    @Step ("Переходим к GitHub")
-    public void openPageGitHub(TestData value) {
+    public static void openPageGitHub(TestData value) {
         open(value.getUrl());
     }
 
-    @Step ("Ищем репозиторий")
-    public void searchRepository (TestData value) {
+    public static void searchRepository (TestData value) {
         $("[data-scoped-placeholder = Search]").setValue(value.getRepository()).pressEnter();
     }
 
-    @Step ("Переходим к репозиторию")
-    public void openRepository (TestData value) {
+    public static void openRepository (TestData value) {
         $(By.linkText(value.getRepository())).click();
     }
 
-    @Step ("Проверяем наличие Issue")
-    public void checkIssue (TestData value) {
+    public static void checkIssue (TestData value) {
         $("[data-tab-item = i1issues-tab]").shouldHave(text(value.getCheckValue()));
+
     }
 }
